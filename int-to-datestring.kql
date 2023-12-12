@@ -1,0 +1,10 @@
+let todatestring = (value:int) {
+    let Minutes = value % 60; 
+    let Hours = (value - (value % 60)) / 60 % 24;
+    let Days = (value - (value % (60*24))) / (60*24);
+    let DaysString = case(Days < 10, strcat("0", toint(Days)), tostring(toint(Days)));
+    let HoursString = case(Hours < 10, strcat("0", toint(Hours)), tostring(toint(Hours)));
+    let MinutesString = case(Minutes < 10, strcat("0", toint(Minutes)), tostring(toint(Minutes)));
+    let DateString = strcat(DaysString, ":", HoursString, ":", MinutesString);
+    DateString
+};
